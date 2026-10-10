@@ -74,6 +74,10 @@ instead of spawning real scans.
 
 Full step-by-step usage instructions: [`docs/USAGE.md`](docs/USAGE.md).
 
+## Licença
+
+Distribuído sob a licença **MIT**. Veja [`LICENSE`](LICENSE).
+
 ## Ética e uso legal
 
 Use somente em alvos para os quais você tem autorização explícita. Alvos
