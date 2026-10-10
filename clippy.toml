@@ -1,0 +1,3 @@
+# Clippy configuration. Warnings are escalated to errors via `-- -D warnings`
+# (see the `[lints.clippy]` table in Cargo.toml).
+msrv = "1.74"

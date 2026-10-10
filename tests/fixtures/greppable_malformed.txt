@@ -1,0 +1,5 @@
+Open 10.0.0.5:22
+this line is noise
+10.0.0.6 -> [not-a-port]
+Open malformed
+10.0.0.7 -> [8080]
