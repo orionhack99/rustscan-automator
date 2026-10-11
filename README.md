@@ -1,5 +1,9 @@
 # RustScan Automator
 
+<p align="center">
+  <img src="assets/banner.png" alt="RustScan Automator — red team reconnaissance banner" width="100%">
+</p>
+
 Reconnaissance automation that orchestrates [RustScan](https://github.com/RustScan/RustScan)
 in place of nmap. It is modeled on the reconnaissance workflows of
 [nmapAutomator](https://github.com/21y4d/nmapAutomator) but deliberately limits
