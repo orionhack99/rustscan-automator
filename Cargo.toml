@@ -5,6 +5,7 @@ edition = "2021"
 description = "Reconnaissance automation tool that orchestrates RustScan in place of nmap"
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/orionhack99/rustscan-automator"
 
 [lib]
 name = "rustscan_automator"

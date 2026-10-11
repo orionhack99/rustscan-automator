@@ -29,7 +29,31 @@ nmap --version
 
 ---
 
-## 2. Compilar
+## 2. Instalar
+
+### 2.1 Baixar um binário pronto (recomendado)
+
+A cada tag `vX.Y.Z`, o workflow de **Release** publica binários na página de
+Releases. Escolha o alvo do seu sistema:
+
+```bash
+# Linux x86_64 (glibc)
+curl -LO https://github.com/orionhack99/rustscan-automator/releases/latest/download/rustscan-automator-x86_64-unknown-linux-gnu.tar.gz
+
+# Linux x86_64 estático (musl)
+curl -LO https://github.com/orionhack99/rustscan-automator/releases/latest/download/rustscan-automator-x86_64-unknown-linux-musl.tar.gz
+
+# macOS (Intel / Apple Silicon)
+curl -LO https://github.com/orionhack99/rustscan-automator/releases/latest/download/rustscan-automator-x86_64-apple-darwin.tar.gz
+curl -LO https://github.com/orionhack99/rustscan-automator/releases/latest/download/rustscan-automator-aarch64-apple-darwin.tar.gz
+
+tar xzf rustscan-automator-*.tar.gz
+sudo install -m755 rustscan-automator /usr/local/bin/   # Linux
+```
+
+Cada arquivo vem acompanhado de um `.sha256` para conferência de integridade.
+
+### 2.2 Compilar a partir do código
 
 ```bash
 git clone https://github.com/orionhack99/rustscan-automator.git

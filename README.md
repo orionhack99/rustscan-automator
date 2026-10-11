@@ -4,6 +4,13 @@
   <img src="assets/banner.png" alt="RustScan Automator — red team reconnaissance banner" width="100%">
 </p>
 
+<p align="center">
+  <a href="https://github.com/orionhack99/rustscan-automator/actions/workflows/ci.yml"><img src="https://github.com/orionhack99/rustscan-automator/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="https://github.com/orionhack99/rustscan-automator/releases/latest"><img src="https://img.shields.io/github/v/release/orionhack99/rustscan-automator?sort=semver" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/platform-linux%20%7C%20macOS-lightgrey.svg" alt="Platforms: Linux and macOS">
+</p>
+
 Reconnaissance automation that orchestrates [RustScan](https://github.com/RustScan/RustScan)
 in place of nmap. It is modeled on the reconnaissance workflows of
 [nmapAutomator](https://github.com/21y4d/nmapAutomator) but deliberately limits
@@ -73,6 +80,31 @@ cargo clippy --all-targets
 
 Tests inject a fake `CommandRunner`, so the suite replays canned RustScan output
 instead of spawning real scans.
+
+## CI/CD
+
+Continuous integration and releases run on GitHub Actions (`.github/workflows/`):
+
+- **CI** ([`ci.yml`](.github/workflows/ci.yml)) — on every push to `main` and on
+  pull requests: `cargo fmt --check`, `cargo clippy -- -D warnings`, and the full
+  test suite plus a release build on **Linux** and **macOS**. A non-blocking
+  `cargo-audit` job reports dependency advisories.
+- **Release** ([`release.yml`](.github/workflows/release.yml)) — triggered by a
+  `v*` tag (or manually). Builds and attaches binaries with SHA-256 checksums for
+  `x86_64-unknown-linux-gnu`, `x86_64-unknown-linux-musl` (static),
+  `x86_64-apple-darwin`, and `aarch64-apple-darwin` to the GitHub Release.
+
+Dependabot keeps Cargo dependencies and action versions current.
+
+### Cutting a release
+
+```sh
+# bump the version in Cargo.toml, then:
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The tag triggers the release workflow and publishes the binaries.
 
 ## Documentation
 
